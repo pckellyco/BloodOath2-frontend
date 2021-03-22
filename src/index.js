@@ -55,4 +55,13 @@ const cultCounterButton = document.querySelector(".bloodoath-button");
 const commentForm = document.querySelector(".comment-form");
 const commentList = document.querySelector(".comments");
 
-fetch();
+fetch(baseURL)
+    .then ((response) => response.json) //transforming response from baseURL to json 
+    .then ((cultCard) => {
+        cultName.textContent = cult.name;
+        cultImage.src = cult.img_url;
+        cultCounter.textContent = cult.count;
+        
+
+    })
+    
